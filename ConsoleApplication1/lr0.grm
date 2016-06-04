@@ -1,0 +1,27 @@
+[非终结符]
+P D R E T F B M S L N
+[终结符]
+id ( ) ; : * + > = { } int and if then  while do
+[文法起始符]
+Q
+[生成式]
+Q => P
+P => id()L;R
+L => L;D
+L => D
+D => id:int
+E => E+T
+E => T
+T => T*F
+T => F
+F => (E)
+F => id
+B => B and B
+B => id>id
+M => id=E
+S => if B then M
+S => while B do M
+S => M
+N => N;S
+N => S
+R => {N}
